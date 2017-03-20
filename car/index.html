@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/angular.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/ngModel.js"></script>
+
+
+</head>
+<body>
+	<div class="header">
+		<div class="nav clearfix">
+			<a href="javascript:;" class="logo fl">人人车LOGO</a>
+			<ul class="nav-n fl">
+				<li class="fl">
+					<a href="javascript:;" class="first">深圳</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">买车</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;" class="sale">卖车
+						<div class="sale-img"></div>
+					</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">找车</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">论坛</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">服务保障</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;" class="last">领现金红包图片</a>
+				</li>
+			</ul>
+			<ul class="login fr">
+				<li class="login-l fl">
+					<a href="javascript:;">登陆</a>
+				</li>
+				<li class="tel fl">
+					<a href="javascript:;">400-091-3019</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="banner">
+		<div class="banner-con clearfix" id="banner">
+
+			<a href="javascript:;" class="banner-img fl"></a>
+
+			<ul class="list fr" id="ul" ng-controller="nav">
+				<li  class="on" ng-repeat="n in a3">
+					<a href="javascript:;">{{n}}</a>
+				</li>
+
+
+				<li ng-repeat="n in a1">
+					<a href="javascript:;">{{n}}</a>
+				</li>
+				<li class="last" ng-repeat="n in a2">
+					<a href="javascript:;">{{n}}</a>
+				</li>
+				<!--<li  class="on">
+					<a href="javascript:;">极速卖车，全程免费！</a>
+				</li>
+
+				<li>
+					<a href="javascript:;">向成都评估师叶朋、郑科致敬</a>
+				</li>
+				<li>
+					<a href="javascript:;">人人车完成新一轮1.5亿美元融资</a>
+				</li>
+				<li class="last">
+					<a href="javascript:;">拒绝一百万次，只为更靠谱</a>
+				</li>-->
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<div class="search clearfix">
+			<div class="left fl" >
+				<a href="javascript:;" class="m3 fl">买</a>
+				<div class="l fl" >
+					<ul class="brand clearfix" ng-controller="con" >
+						<li class="fl" ng-repeat="aa in arr1">
+							<a href="javascript:;">{{aa}}</a>
+						</li>
+
+						<li class="fl">
+							<a href="javascript:;" class="last">更多</a>
+						</li>
+					</ul>
+					<ul class="price clearfix" ng-controller="con">
+						<li class="fl" ng-repeat="na in arr2">
+							<a href="javascript:;">{{na}}</a>
+						</li>
+					<!--<li class="fl">
+							<a href="javascript:;">3万以下</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">3-5万</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">5-10万</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">10-15万</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">15-20万</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">20-30万</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">30-60万</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">60万以上</a>
+						</li>-->
+					</ul>
+
+					<ul class="type clearfix" ng-controller="con">
+						<li class="fl" ng-repeat="item in arr3">
+							<a href="javascript:;">{{item}}</a>
+						</li>
+						<!--<li class="fl">
+							<a href="javascript:;">SUV</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">商务车</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">跑车</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">急售</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">准新车</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">超值</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">促销车</a>
+						</li>-->
+					</ul>
+					<div class="text clearfix">
+						<input type="text" placeholder="请输入关键词，如：别克 1.6L" class="box1 fl" />
+						<input type="button" class="box2 fl" />
+					</div>
+				</div>
+			</div>
+			<div class="right fr">
+				<a href="javascript:;" class="m4 fl">卖</a>
+				<div class="user fr">
+					<p>快速卖车
+						<span>已有 <i>337992</i> 人成功卖车</span>
+					</p>
+					<input type="text" placeholder="手机号码（必填）" class="i1" />
+					<input type="button" value="帮我卖车" class="i2" />
+					<div class="plan">
+						<span>后续计划</span>
+						<input type="checkbox" /> 团购新车
+						<input type="checkbox" /> 买二手车
+						<input type="checkbox" /> 不买车
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mess">
+			<ul class="mess-m clearfix" ng-controller="con">
+				<li class="mess-m-li fl" ng-repeat="n in arr4">
+					<!--<a href="javascript:;" class="mess-m-a">
+						<h3>分期购车</h3>
+						<p>0首付，门槛低，房贷快</p>
+						<img src="img/15.png" />
+					</a>-->
+					<a href="javascript:;" class="mess-m-a" >
+						<h3>{{n.name}}</h3>
+						<p>{{n.tit}}</p>
+						<img ng-src="{{n.img}}" />
+					</a>
+				</li>
+				<!--<li class="mess-m-li fl">
+					<a href="javascript:;" class="mess-m-a">
+						<h3>帮我找车</h3>
+						<p>满足您的个性化需求</p>
+						<img src="img/16.png" />
+					</a>
+				</li>
+				<li class="mess-m-li fl">
+					<a href="javascript:;" class="mess-m-a">
+						<h3>分期购车</h3>
+						<p>0首付，门槛低，房贷快</p>
+						<img src="img/17.png" class="third" />
+					</a>
+				</li>-->
+				<li class="last fr" ng-controller="gita">
+					<ul class="first clearfix">
+						<li class="fl">
+							<a href="javascript:;" class="f1">论坛</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;" class="f2"></a>
+						</li>
+						<li class="fr">
+							<a href="javascript:;" class="f3">更多</a>
+						</li>
+					</ul>
+					<ul class="other clearfix">
+						<li class="title fl">
+							<a href="javascript:;">
+								必戳：【爱车达人】主题征文 每天送你千元...
+							</a>
+						</li>
+						<li class="autor fr">
+							<a href="javascript:;" >蓝一枚</a>
+						</li>
+					</ul>
+
+					<ul class="other clearfix">
+						<li class="title fl">
+							<a href="javascript:;">
+								众测：让视线不再模糊 玻璃防雾剂免费送
+							</a>
+						</li>
+						<li class="autor fr">
+							<a href="javascript:;" class="autor-a2">安小主</a>
+						</li>
+					</ul>
+					<ul class="other clearfix">
+						<li class="title fl">
+							<a href="javascript:;">
+								不求人攻略：史上最全面的购车指南在这里
+							</a>
+						</li>
+						<li class="autor fr">
+							<a href="javascript:;" class="autor-a2">安小主</a>
+						</li>
+					</ul>
+					<ul class="other clearfix">
+						<li class="title fl">
+							<a href="javascript:;">
+								买车：异地购车，一次别克凯越的真实交易...
+							</a>
+						</li>
+						<li class="autor fr">
+							<a href="javascript:;" class="autor-a3">于宗</a>
+						</li>
+					</ul>
+					<ul class="cho clearfix" ng-controller="gita">
+						<li class="fl" ng-repeat="bb in c1">
+							<a href="javascript:;">
+								{{bb}}
+							</a>
+						</li>
+						<!--<li class="fl">
+							<a href="javascript:;">
+								买车&养车
+							</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;">
+								购车推荐
+							</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;" class="last">
+								新手攻略
+							</a>
+						</li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="cars" >
+			<div class="case" >
+				<ul class="kind clearfix" ng-controller="con">
+					<li class="fl" ng-repeat="na in arr6">
+						<a href="javascript:;">{{na}}</a>
+					</li>
+					<!--<li class="fl">
+						<a href="javascript:;">5万内精选</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">SUV</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">急售</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">更多</a>
+					</li>-->
+				</ul>
+				<ul class="sa clearfix" ng-controller="con">
+					<li class="fl" ng-repeat="che in arr5">
+						<a href="javascript:;" class="sa-1" style="background:url('{{che.img}}') no-repeat">
+							<h4>{{che.title}}</h4>
+							<p>{{che.time*1000|date:'yyyy年MM月'}}/{{che.kilos}}万公里
+								<span ng-show="{{che.hurry}}">急售</span>
+								<strong ng-show="{{che.ennewcar}}">准新车</strong>
+								<b ng-show="{{che.chaozhi}}">超值</b>
+							</p>
+							<h3>{{che.price}}<span>万</span></h3>
+							<h5>新车价：<span>{{che.newPrice}}</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>
+
+					<!--<li class="fl">
+						<a href="javascript:;" class="sa-2">
+							<h4>别克-凯越 2013款 1.5L 自动经典型</h4>
+							<p>2013年12月/5.31万公里 <span>急售</span></p>
+							<h3>5.20<span>万</span></h3>
+							<h5>新车价：<span>10.19</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;" class="sa-3">
+							<h4>路虎-揽胜极光（进口） 2012款 2.0T 3门耀...</h4>
+							<p>2012年8月/4.10万公里 <span>急售</span></p>
+							<h3>30.00<span>万</span></h3>
+							<h5>新车价：<span>63.80</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>
+					<li class="forth fl">
+						<a href="javascript:;" class="sa-4">
+							<h4>比亚迪-F3 2015款 节能版 1.5L 手动豪华型</h4>
+							<p>2015年7月/1.70万公里 <span>急售</span></p>
+							<h3>4.95<span>万</span></h3>
+							<h5>新车价：<span>5.59</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;" class="sa-5">
+							<h4>北汽幻速-H2 2015款 1.5L AMT豪华型BJ...</h4>
+							<p>2015年11月/1.78万公里 <b>超值</b> <span>急售</span></p>
+							<h3>4.20<span>万</span></h3>
+							<h5>新车价：<span>6.48</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;" class="sa-6">
+							<h4>比亚迪-秦 2015款 1.5T 双冠旗舰版</h4>
+							<p>2016年5月/1.55万公里 <span>急售</span> <strong>准新车</strong></p>
+							<h3>12.00<span>万</span></h3>
+							<h5>新车价：<span>20.98</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;" class="sa-7">
+							<h4>起亚-K5 2016款 1.6T 自动LUX</h4>
+							<p>2016年5月/2.96万公里 <span>急售</span> <strong>准新车</strong></p>
+							<h3>15.00<span>万</span></h3>
+							<h5>新车价：<span>18.08</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>
+					<li class="forth fl">
+						<a href="javascript:;" class="sa-8">
+							<h4>现代-瑞纳 2013款 三厢 1.4L 自动标准型GL</h4>
+							<p>2013年10月/2.93万公里 <span>急售</span></p>
+							<h3>5.88<span>万</span></h3>
+							<h5>新车价：<span>8.19</span>万</h5>
+							<i>砍价</i>
+						</a>
+					</li>-->
+				</ul>
+				<input type="button" value="查看更多" class="more" />
+			</div>
+		</div>
+		<div class="shadow"></div>
+		<div class="story">
+			<div class="story-main clearfix">
+				<div class="left fl">
+					<div class="top clearfix">
+						<p class="fl">车主故事 <a href="javascript:;" class="more">更多</a></p>
+						<div class="r fr">
+							<a href="javascript:;" class="r1"></a>
+							<a href="javascript:;" class="r2"></a>
+							<a href="javascript:;" class="r3"></a>
+							<a href="javascript:;" class="r4"></a>
+							<a href="javascript:;" class="r5"></a>
+						</div>
+					</div>
+					<ul class="down clearfix" ng-controller="bod">
+						<li class="fl" ng-repeat="n in e1">
+							<a href="javascript:;" class="down1 fl" style="background:url('{{n.img}}') no-repeat;"></a>
+							<a href="javascript:;" class="down2 fl">
+								<h2>{{n.t1}}<br />{{n.t2}}</h2>
+								<p>{{n.t3}}<br />{{n.t4}}<br/>{{n.t5}}</p>
+							</a>
+						</li>
+						<li class="sec fl" ng-repeat="m in e2">
+							<a href="javascript:;" class="down3 fl" style="background:url('{{m.img}}') no-repeat;"></a>
+							<a href="javascript:;" class="down2 fl">
+								<h2>{{m.t1}}<br />{{m.t2}}</h2>
+								<p>{{m.t3}}<br />{{m.t4}}<br />{{m.t5}}</p>
+							</a>
+						</li>
+					<!--	<li class="fl">
+							<a href="javascript:;" class="down1 fl"></a>
+							<a href="javascript:;" class="down2 fl">
+								<h2>这个漂亮姑娘,买车速<br />度堪比老司机</h2>
+								<p>小马达,北漂单身女青年,<br />2016年11月24日于人人车收<br />获了一台马自达3-昂克赛拉。</p>
+							</a>
+						</li>
+						<li class="sec fl">
+							<a href="javascript:;" class="down3 fl"></a>
+							<a href="javascript:;" class="down2 fl">
+								<h2>5年4000公里的二手<br />车，你会买吗？</h2>
+								<p>意哥,6年北漂,2016年11月<br />30日，他在人人车收获一台车<br />况绝佳的马自达6。</p>
+							</a>
+						</li>-->
+					</ul>
+				</div>
+				<div class="right fl">
+					<h3>媒体报道</h3>
+					<ul class="rep" ng-controller="mod">
+						<li ng-repeat="n in d1">
+							<a href="javascript:;"><img ng-src="{{n.img}}" />{{n.title}}</a>
+						</li>
+						<!--<li >
+							<a href="javascript:;"><img src="img/19.png" />QuestMobile二手车电商数据解读：人人车行业领先</a>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="img/19.png" />
+							人人车完成D轮1.5亿美元融资 王思聪参投</a>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="img/19.png" />
+							人人车用户自述两次购车经历：人人车，靠谱！</a>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="img/19.png" />
+							人人车李健：没什么比善良更重要，产品也是</a>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="img/19.png" />
+							二手车电商大战，人人车获胜，凭什么？</a>
+						</li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-main">
+			<ul class="safe clearfix" ng-controller="ctr">
+				<li class="fl" ng-repeat="n in arr2"><img ng-src="{{n.img}}"/> {{n.tit}}</li>
+				<!--<li class="fl"><img src="img/38.png" /> 一年/两万公里质保</li>
+				<li class="fl"><img src="img/39.png" /> 14天可退</li>
+				<li class="fl"><img src="img/40.png" /> 249项检测</li>
+				<li class="fl"><img src="img/41.png" /> 100%个人车源</li>
+				<li class="fl"><img src="img/42.png" /> 一站式服务</li>-->
+			</ul>
+			<ul class="about clearfix" ng-controller="gita">
+				<li class="a1 fl" ng-repeat="n in c3">
+					<ul>
+						<li class="a1-1">{{n.us}}</li>
+						<li class="a1-2"><a href="javascript:;">{{n.lc}}</a></li>
+						<li class="a1-2"><a href="javascript:;">{{n.new}}</a></li>
+						<li class="a1-2"><a href="javascript:;">{{n.add}}</a></li>
+					</ul>
+				</li>
+				<!--<li class="a1 fl">
+					<ul>
+						<li class="a1-1">交易流程</li>
+						<li class="a1-2"><a href="javascript:;">买车流程</a></li>
+						<li class="a1-2"><a href="javascript:;">卖车流程</a></li>
+						<li class="a1-2"><a href="javascript:;">异地购车</a></li>
+					</ul>
+				</li>
+				<li class="a1 fl">
+					<ul>
+						<li class="a1-1">新手购车指南</li>
+						<li class="a1-2"><a href="javascript:;">新车VS二手车</a></li>
+						<li class="a1-2"><a href="javascript:;">选车注意事项</a></li>
+						<li class="a1-2"><a href="javascript:;">过户手续办理</a></li>
+					</ul>
+				</li>
+				<li class="a1 fl">
+					<ul>
+						<li class="a1-1">二手车精选</li>
+						<li class="a1-2"><a href="javascript:;">车型库</a></li>
+						<li class="a1-2"><a href="javascript:;">二手车咨询</a></li>
+						<li class="a1-2"><a href="javascript:;">二手车问答</a></li>
+					</ul>
+				</li>-->
+				<div class="fiv fl">
+					<li><a href="javascript:;">二手车估价</a></li>
+					<li><a href="javascript:;">二手车迁入标准</a></li>
+					<li><a href="javascript:;">二手车贷款</a></li>
+				</div>
+				<li class="er fl" ng-controller="mod">
+					<div class="wei fl" ng-repeat="m in d2">
+						<img ng-src="{{m.img}}" />
+						<p>{{m.title}}</p>
+					</div>
+				<!--	<div class="wei fl">
+						<img src="img/43.png" />
+						<p>关注微信</p>
+					</div>
+					<div class="wei fl">
+						<img src="img/44.png" />
+						<p>下载APP</p>
+					</div>-->
+				</li>
+				<li class="rela fl" ng-controller="mod">
+					<h1>400-861-0500</h1>
+					<h2>免费咨询（咨询、建议、投诉）</h2>
+					<h2>周一至周六 9：00-19：00</h2>
+					<ul class="lian clearfix" >
+						<li class="fl" ng-repeat="n in d3">
+							<a href="javascript:;"><img ng-src="{{n.img}}"/>{{n.title}}</a>
+						</li>
+					<!--	<li class="fl">
+							<a href="javascript:;"><img src="img/46.png" /> 官方微信</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;"><img src="img/47.png" /> 官方微博</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;"><img src="img/48.png" /> 官方论坛</a>
+						</li>
+						<li class="fl">
+							<a href="javascript:;"><img src="img/49.png" /> 举报事故车</a>
+						</li>-->
+					</ul>
+				</li>
+			</ul>
+			<div class="word" >
+				<ul class="abc clearfix" ng-controller="ctr">
+					<p class="fl">按字母查找</p>
+					<li class="fl" ng-repeat="n in arr">
+						<a href="javascript:;">{{n}}</a>
+					</li>
+					<!--<li class="fl">
+						<a href="javascript:;">B</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">C</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">D</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">F</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">G</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">H</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">J</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">K</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">L</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">M</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">N</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">Q</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">R</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">S</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">W</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">X</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">Y</a>
+					</li>
+					<li class="fl">
+						<a href="javascript:;">Z</a>
+					</li>-->
+				</ul>
+			</div>
+			<ul class="city clearfix" ng-controller="gita">
+				<li class="first fl">深圳二手车</li>
+				<li class="fl" ng-repeat="n in c2"><a href="javascript:;">{{n}}</a></li>
+				<!--<li class="fl"><a href="javascript:;">热门品牌</a></li>
+				<li class="fl"><a href="javascript:;">热门车系</a></li>
+				<li class="fl"><a href="javascript:;">手机找二手车</a></li>
+				<li class="fl"><a href="javascript:;">友情链接</a></li>-->
+			</ul>
+			<div class="no">
+				北京二手车，人人北京二手频道。专注北京个人二手车，提供大量真实、优质的北京个人二手出售转让信息，供您选择。我们致力于打造专业北京二手车交易市场，所以每辆二手车，都经过我们的二手车检测师专业、全面、权威的检测！购买北京二手车，就上人人车北京频道。 <a href="javascript:;">北京二手车触屏版</a>。
+			</div>	
+		</div>
+		<div class="w">
+			<p>Copyright © 2017, renrenche.com, All Rights Reserved 京公网安备 11010802015302号 京ICP证160608号</p>	
+		</div>
+	</div>
+	<ul class="fix clearfix">
+		<li class="f-1 fl">
+			<a href="javascript:;"><img src="img/50.png" /> 免费电话</a>
+		</li>
+		<li class="f-2 fl">
+			<a href="javascript:;" class="w" id="app"><img src="img/51.png" /> APP</a>
+			<a href="javascript:;" class="app" id="app_i"><img src="img/54.png" /></a>
+		</li>
+		<li class="f-3 fl">
+			<a href="javascript:;"><img src="img/52.png" /> 公众号</a>
+		</li>
+		<li class="f-4 fl">
+			<a href="#"><img src="img/53.png" /></a>
+		</li>
+	</ul>
+</body>
+</html>
